@@ -1,0 +1,34 @@
+<div class="container">
+  <section id="chat" ng-show="show_chat">
+  
+        
+      <ul class="featured-list">
+          <li class="featured-list__item clear list-messages" ng-repeat="msg in messages">
+              <div class="container-small">
+                  <div class="featured-list__content g-wide--1 g-wide--last g-medium--half g--last user-info">
+                      <img ng-src="{{msg.user.picture}}" alt="" class="user-img">
+                      <h3 class="user-name">{{msg.user.name}}</h3>
+                      
+                  </div>
+                  <div class="featured-list__img-wrapper g-wide--3 g-medium--half">
+                      <p class="large">{{msg.content}}</p>
+                  </div>
+              </div>
+          </li>
+      </ul>
+        
+
+    <section id="chat-input">
+      <paper-input label="Say something..."></paper-input>
+      <paper-button label="Send" raisedButton ng-click="submit_message()"></paper-button>
+    </section>
+  </section>
+
+  <section id="login" ng-show="show_login" class="card">
+
+  {{user.id}}
+
+    <paper-button raisedButton class="colored" label="Login with Google" ng-click="login_google()"></paper-button>
+  </section>
+</div>
+
