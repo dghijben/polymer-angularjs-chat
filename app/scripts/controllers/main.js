@@ -32,7 +32,7 @@ angular.module('polymerChatApp')
           $scope.showChat = true;
           $scope.showLogin = false;
 
-          $scope.notify('You are logged in!');
+          notify('You are logged in!');
         });
       } else {
         console.log('not logged In');
@@ -61,7 +61,7 @@ angular.module('polymerChatApp')
         $scope.messages.$add(message);
         resetInputValue();
       } else {
-        $scope.notify('Message Invalid. Max characters: 150');
+        notify('Message Invalid. Max characters: 150');
       }
     };
 
@@ -77,11 +77,10 @@ angular.module('polymerChatApp')
       $route.reload();
     }
 
-    $scope.notify = function(msg) {
-      console.log(msg);
+    function notify(msg) {
       var toast = angular.element('#toast')[0];
       $scope.statusMessage = msg;
-      toast.show();
+      toast.show();      
     }
 
     function getInputValue() {
