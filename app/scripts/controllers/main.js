@@ -28,8 +28,11 @@ angular.module('polymerChatApp')
       } else if (user) {
         $scope.$apply(function(){
           $scope.user = user;
+          
           $scope.showChat = true;
           $scope.showLogin = false;
+
+          $scope.notify('You are logged in!');
         });
       } else {
         console.log('not logged In');
