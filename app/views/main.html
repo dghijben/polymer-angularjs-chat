@@ -1,4 +1,3 @@
-
 <section id="chat" ng-show="showChat" >
   <div class="container container-chat" >
     <ul class="messages" scroll-glue>
@@ -14,32 +13,32 @@
         </div>
       </li>
     </ul>
+
     <div class="clearfix"></div>
     <a id="bottom"></a>
     <paper-shadow z="1"></paper-shadow>
+
   </div>
   <div class="footer">
     <core-toolbar id="toolbarfooter">
-    <div style="width: 500px; margin: 0 auto">
-      <span flex>
-        <paper-input label="Say something..."></paper-input>
-        <paper-fab icon="arrow-forward" ng-click="submitMessage()"></paper-fab>      
-      </span>        
-    </div>
-    <core-icon-button icon="settings-power" ng-click="logout()"></core-icon-button>
-  </core-toolbar>    
-
-</div>      
-
+      <div style="width: 500px; margin: 0 auto">
+        <span flex>
+          <paper-input label="Say something..."></paper-input>
+          <paper-fab icon="arrow-forward" ng-click="submitMessage()"></paper-fab>      
+        </span>        
+      </div>
+      <core-icon-button icon="settings-power" ng-click="logout()"></core-icon-button>
+    </core-toolbar>    
+  </div>      
 </section>
 
-<section id="login" ng-show="showLogin">
-  
+<section id="login" ng-show="showLogin">  
   <div class="container container-chat" style="text-align: center; padding: 20px 0">
-
-          <paper-button raisedButton class="colored" label="Login with Google" icon="google-plus" ng-click="authGoogle()"></paper-button>
+    <paper-button raisedButton class="colored" label="Login with Google" icon="google-plus" ng-click="authGoogle()"></paper-button>
     <paper-shadow z="1"></paper-shadow>
   </div>
 </section>
-</div>
+
+
+<paper-toast id="toast" text="{{statusMessage}}"></paper-toast>
 

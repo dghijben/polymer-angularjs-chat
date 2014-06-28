@@ -48,12 +48,18 @@ angular.module('polymerChatApp')
     };
 
     $scope.submitMessage = function() {
-      var message = {
-        content: getInputValue(),
-        user: $scope.user
-      };
-      $scope.messages.$add(message);
-      resetInputValue();
+      var msg = getInputValue();
+
+      if(isValid(msg)) {
+        var message = {
+          content: getInputValue(),
+          user: $scope.user
+        };
+        $scope.messages.$add(message);
+        resetInputValue();
+      } else {
+        $scope.notify('Message Invalid. Max characters: 150');
+      }
     };
 
     // Auto-scroll down on each new message
@@ -68,6 +74,13 @@ angular.module('polymerChatApp')
       $route.reload();
     }
 
+    $scope.notify = function(msg) {
+      console.log(msg);
+      var toast = angular.element('#toast')[0];
+      $scope.statusMessage = msg;
+      toast.show();
+    }
+
     function getInputValue() {
       var input = angular.element('paper-input')[0];
       return input.value;
@@ -76,5 +89,9 @@ angular.module('polymerChatApp')
     function resetInputValue() {
       var input = angular.element('paper-input')[0];
       input.value = '';
+    }
+
+    function isValid( str ) {
+      return str.trim().length > 0 && str.trim().length <= 150;
     }
   });
