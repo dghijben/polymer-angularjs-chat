@@ -1,11 +1,29 @@
 // bower:scss
 // endbower
 
+html, body {
+  height: 100%;
+}
+
+core-header-panel{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 64px; /* .push must be the same height as .footer */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 body {
   font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
   background: #EEEEEE;
 }
-
+.clearfix{
+  clear: both;
+}
 .card{
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -27,7 +45,8 @@ body {
 .user-info{
   text-align: center;
   .user-img{
-    border-radius: 100px;  
+    border-radius: 100px;
+    width: 60px;  
   }  
   .user-name{
     margin-top: 0;
@@ -44,8 +63,7 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
-.footer {
+.marketing{
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -65,9 +83,6 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
@@ -131,9 +146,11 @@ core-header-panel {
 }
 
 core-toolbar {
-  background-color: #03A9F4;
+  background-color: #3E50B4;
 }
+#toolbarfooter{
 
+}
 
 .list-messages.ng-enter,
 .list-messages.ng-leave {
@@ -149,3 +166,58 @@ core-toolbar {
 .list-messages.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+
+paper-fab{
+  float: right;
+}
+#toolbartop{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+paper-input::shadow{
+  color: #FFF;
+}
+
+.container-chat{
+  background: #FFF; 
+  margin-top: 120px;
+  padding-left: 2%; 
+  padding-right: 2%;
+  margin-bottom: 63px;
+  padding-bottom: 30px;
+  .messages{
+    float: left;
+    margin: 0;
+    padding: 0;
+    .row{
+      list-style: none;
+      float: left;
+      width: 100%;
+      padding-left: 0;
+      padding: 5px 0;
+      &::before{
+        content: "";
+      }
+      .avatar{
+        float: left;
+        padding: 10px 20px 10px 20px;
+        width: 90px;
+        img{
+          width: 60px;
+          border-radius: 100px;
+        }
+      }
+      .content{
+        float: left;
+        p{
+          padding-top: 11px;
+        }
+      }
+    }
+  }  
+}
+
+
+

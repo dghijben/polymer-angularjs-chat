@@ -1,34 +1,45 @@
-<div class="container">
-  <section id="chat" ng-show="show_chat">
+
+<section id="chat" ng-show="showChat" >
+  <div class="container container-chat" >
+    <ul class="messages" scroll-glue>
+      <li class="row" ng-repeat="msg in messages" >
+        <div class="avatar">
+          <img ng-src="{{msg.user.thirdPartyUserData.picture}}" alt="">  
+        </div>
+        <div class="content">
+          <p class="base">
+            <strong>{{msg.user.displayName}}</strong><br/>
+            {{msg.content}}
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+    <a id="bottom"></a>
+    <paper-shadow z="1"></paper-shadow>
+  </div>
+  <div class="footer">
+    <core-toolbar id="toolbarfooter">
+    <div style="width: 500px; margin: 0 auto">
+      <span flex>
+        <paper-input label="Say something..."></paper-input>
+        <paper-fab icon="arrow-forward" ng-click="submitMessage()"></paper-fab>      
+      </span>        
+    </div>
+    <core-icon-button icon="settings-power" ng-click="logout()"></core-icon-button>
+  </core-toolbar>    
+
+</div>      
+
+</section>
+
+<section id="login" ng-show="showLogin">
   
-        
-      <ul class="featured-list">
-          <li class="featured-list__item clear list-messages" ng-repeat="msg in messages">
-              <div class="container-small">
-                  <div class="featured-list__content g-wide--1 g-wide--last g-medium--half g--last user-info">
-                      <img ng-src="{{msg.user.picture}}" alt="" class="user-img">
-                      <h3 class="user-name">{{msg.user.name}}</h3>
-                      
-                  </div>
-                  <div class="featured-list__img-wrapper g-wide--3 g-medium--half">
-                      <p class="large">{{msg.content}}</p>
-                  </div>
-              </div>
-          </li>
-      </ul>
-        
+  <div class="container container-chat" style="text-align: center; padding: 20px 0">
 
-    <section id="chat-input">
-      <paper-input label="Say something..."></paper-input>
-      <paper-button label="Send" raisedButton ng-click="submit_message()"></paper-button>
-    </section>
-  </section>
-
-  <section id="login" ng-show="show_login" class="card">
-
-  {{user.id}}
-
-    <paper-button raisedButton class="colored" label="Login with Google" ng-click="login_google()"></paper-button>
-  </section>
+          <paper-button raisedButton class="colored" label="Login with Google" icon="google-plus" ng-click="authGoogle()"></paper-button>
+    <paper-shadow z="1"></paper-shadow>
+  </div>
+</section>
 </div>
 

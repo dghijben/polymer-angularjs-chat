@@ -14,7 +14,8 @@
     "polymer": "Polymer/polymer#~0.3.3",
     "core-elements": "Polymer/core-elements#~0.3.3",
     "paper-elements": "Polymer/paper-elements#~0.3.3",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "angularfire": "~0.7.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

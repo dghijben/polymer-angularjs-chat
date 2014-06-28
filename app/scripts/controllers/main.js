@@ -8,44 +8,33 @@
  * Controller of the polymerChatApp
  */
 angular.module('polymerChatApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.show_login = false;
-    $scope.show_chat = true;
+  .controller('MainCtrl', function ($scope, $firebase, $location, $anchorScroll, $route) {
+    $scope.showLogin = false;
+    $scope.showChat = false;
 
     var chatRef = new Firebase('https://polymer-chat.firebaseio.com');
+    
+    var messagesRef = new Firebase('https://polymer-chat.firebaseio.com/messages');
+    $scope.messages = $firebase(messagesRef);
 
-    $scope.messages = [{
-      content: "lalalalalalala",
-      user: {
-        name: "Hugo",
-        email: "hugo.victor.dias.teodoro@gmail.com",
-        picture: "http://placehold.it/80"
+    var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+      if (error) {
+        console.log(error);
+      } else if (user) {
+        $scope.$apply(function(){
+          $scope.user = user;
+          $scope.showChat = true;
+          $scope.showLogin = false;
+        });
+        console.log('User ID: ' + user.uid + ', Provider: ' + user.provider);
+      } else {
+        console.log('not logged In');
+        $scope.$apply(function(){
+          $scope.user = false;
+          $scope.showLogin = true;  
+        });
       }
-    },
-    {
-      content: "lelelelelelelellele",
-      user: {
-        name: "Hugo",
-        email: "hugo.victor.dias.teodoro@gmail.com",
-        picture: "http://placehold.it/80"
-      }
-    }]
-
-    // var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
-    //   if (error) {
-    //     console.log(error);
-    //   } else if (user) {
-    //     $scope.$apply(function(){
-    //       $scope.user = user;
-    //       $scope.show_chat = true;
-    //     });
-    //     console.log('User ID: ' + user.uid + ', Provider: ' + user.provider);
-    //   } else {
-    //     console.log('not logged In');
-    //     $scope.user = false;
-    //     $scope.show_login = true;
-    //   }
-    // });  
+    });  
       
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
@@ -53,25 +42,34 @@ angular.module('polymerChatApp')
       'Karma'
     ];
 
-    $scope.login_google = function() {
+    $scope.authGoogle = function() {
       auth.login('google', {
         rememberMe: true,
         scope: 'https://www.googleapis.com/auth/plus.login'
       });      
-    }
+    };
 
-    $scope.submit_message = function() {
+    $scope.submitMessage = function() {
       var message = {
         content: getInputValue(),
-        user: {
-          name: "Hugo",
-          email: "hugo.victor.dias.teodoro@gmail.com",
-          picture: "http://placehold.it/80"
-        }        
-      }
+        user: $scope.user
+      };
 
-      $scope.messages.push(message);
+      $scope.messages.$add(message);
+
       resetInputValue();
+    };
+
+    // Auto-scroll down on each new message
+    $scope.messages.$on("change", function() {
+        $location.hash('bottom');
+        $anchorScroll();
+    });    
+
+    $scope.logout = function() {
+      console.log('Logging out');
+      auth.logout();
+      $route.reload();
     }
 
     function getInputValue() {
