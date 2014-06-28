@@ -32,7 +32,7 @@ angular.module('polymerChatApp')
           $scope.showChat = true;
           $scope.showLogin = false;
 
-          notify('You are logged in!');
+          notify('You are logged in, ' + user.displayName + '!');
         });
       } else {
         console.log('not logged In');
