@@ -3,7 +3,7 @@
     <ul class="messages" scroll-glue>
       <li class="row" ng-repeat="msg in messages" >
         <div class="avatar">
-          <img ng-src="{{msg.user.thirdPartyUserData.picture}}" alt="">  
+          <img ng-src="{{msg.user.picture}}" alt="">  
         </div>
         <div class="content">
           <p class="base">
@@ -35,6 +35,7 @@
 <section id="login" ng-show="showLogin">  
   <div class="container container-chat" style="text-align: center; padding: 20px 0">
     <paper-button raisedButton class="colored" label="Login with Google" icon="google-plus" ng-click="authGoogle()"></paper-button>
+    <paper-button raisedButton class="colored" label="Login with Github" icon="account-circle" ng-click="authGithub()"></paper-button>
     <paper-shadow z="1"></paper-shadow>
   </div>
 </section>

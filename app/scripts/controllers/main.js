@@ -26,6 +26,10 @@ angular.module('polymerChatApp')
       if (error) {
         // TODO: handle errors
       } else if (user) {
+        
+        // Get a universal picture attribute for all providers
+        user.picture = getUserAvatar(user);
+
         $scope.$apply(function(){
           $scope.user = user;
           
@@ -49,6 +53,13 @@ angular.module('polymerChatApp')
         scope: 'https://www.googleapis.com/auth/plus.login'
       });      
     };
+
+    $scope.authGithub = function() {
+      auth.login('github', {
+        rememberMe: true,
+        scope: ''
+      });      
+    }
 
     $scope.submitMessage = function() {
       var msg = getInputValue();
@@ -95,5 +106,14 @@ angular.module('polymerChatApp')
 
     function isValid( str ) {
       return str.trim().length > 0 && str.trim().length <= 150;
+    }
+
+    function getUserAvatar(user) {
+      if(user.provider === "github"){
+        return user.thirdPartyUserData.avatar_url;
+      }
+      if(user.provider === "google"){
+        return user.thirdPartyUserData.picture;
+      }
     }
   });
