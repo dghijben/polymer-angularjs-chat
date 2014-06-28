@@ -1,6 +1,6 @@
 {
   "firebase": "polymer-chat",
-  "public": "dist",
+  "public": "app",
   "ignore": [
     "firebase.json",
     ".*",

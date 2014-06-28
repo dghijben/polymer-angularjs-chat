@@ -12,21 +12,25 @@ angular.module('polymerChatApp')
     $scope.showLogin = false;
     $scope.showChat = false;
 
+    // Attach this applications realtime database
     var chatRef = new Firebase('https://polymer-chat.firebaseio.com');
     
+    // Storing messages in a different node
     var messagesRef = new Firebase('https://polymer-chat.firebaseio.com/messages');
+
+    // Get our messages in real-time
     $scope.messages = $firebase(messagesRef);
 
+    // Auth flow. Everything is handled by firebase
     var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
       if (error) {
-        console.log(error);
+        // TODO: handle errors
       } else if (user) {
         $scope.$apply(function(){
           $scope.user = user;
           $scope.showChat = true;
           $scope.showLogin = false;
         });
-        console.log('User ID: ' + user.uid + ', Provider: ' + user.provider);
       } else {
         console.log('not logged In');
         $scope.$apply(function(){
@@ -36,12 +40,6 @@ angular.module('polymerChatApp')
       }
     });  
       
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     $scope.authGoogle = function() {
       auth.login('google', {
         rememberMe: true,
@@ -54,9 +52,7 @@ angular.module('polymerChatApp')
         content: getInputValue(),
         user: $scope.user
       };
-
       $scope.messages.$add(message);
-
       resetInputValue();
     };
 
