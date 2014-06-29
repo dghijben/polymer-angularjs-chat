@@ -64,6 +64,12 @@ angular.module('polymerChatApp')
       });      
     };
 
+     $scope.sendMessage = function (event){
+      if (event.keyCode === 13) {
+        $scope.submitMessage();
+      };
+    }
+
     $scope.submitMessage = function() {
       var msg = getInputValue();
 
@@ -119,5 +125,5 @@ angular.module('polymerChatApp')
         return user.thirdPartyUserData.picture;
       }
     };
-    
+
   });
