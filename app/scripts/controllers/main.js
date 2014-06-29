@@ -18,6 +18,9 @@ angular.module('polymerChatApp')
     // Storing messages in a different node
     var messagesRef = new Firebase('https://polymer-chat.firebaseio.com/messages');
 
+    // Limit lenght message
+    var limitLen = 50;
+
     // Get our messages in real-time
     $scope.messages = $firebase(messagesRef);
 
@@ -59,7 +62,7 @@ angular.module('polymerChatApp')
         rememberMe: true,
         scope: ''
       });      
-    }
+    };
 
     $scope.submitMessage = function() {
       var msg = getInputValue();
@@ -72,7 +75,7 @@ angular.module('polymerChatApp')
         $scope.messages.$add(message);
         resetInputValue();
       } else {
-        notify('Message Invalid. Max characters: 150');
+        notify('Message Invalid. Max characters: ' + limitLen);
       }
     };
 
@@ -86,27 +89,27 @@ angular.module('polymerChatApp')
       console.log('Logging out');
       auth.logout();
       $route.reload();
-    }
+    };
 
     function notify(msg) {
       var toast = angular.element('#toast')[0];
       $scope.statusMessage = msg;
       toast.show();      
-    }
+    };
 
     function getInputValue() {
       var input = angular.element('paper-input')[0];
       return input.value;
-    }
+    };
 
     function resetInputValue() {
       var input = angular.element('paper-input')[0];
       input.value = '';
-    }
+    };
 
     function isValid( str ) {
-      return str.trim().length > 0 && str.trim().length <= 150;
-    }
+      return str.trim().length > 0 && str.trim().length <= limitLen;
+    };
 
     function getUserAvatar(user) {
       if(user.provider === "github"){
@@ -115,5 +118,6 @@ angular.module('polymerChatApp')
       if(user.provider === "google"){
         return user.thirdPartyUserData.picture;
       }
-    }
+    };
+    
   });
