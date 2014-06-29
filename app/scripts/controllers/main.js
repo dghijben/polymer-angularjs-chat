@@ -59,7 +59,7 @@ angular.module('polymerChatApp')
         rememberMe: true,
         scope: ''
       });      
-    }
+    };
 
     $scope.submitMessage = function() {
       var msg = getInputValue();
@@ -77,7 +77,7 @@ angular.module('polymerChatApp')
     };
 
     // Auto-scroll down on each new message
-    $scope.messages.$on("change", function() {
+    $scope.messages.$on('change', function() {
         $location.hash('bottom');
         $anchorScroll();
     });    
@@ -86,7 +86,7 @@ angular.module('polymerChatApp')
       console.log('Logging out');
       auth.logout();
       $route.reload();
-    }
+    };
 
     function notify(msg) {
       var toast = angular.element('#toast')[0];
@@ -109,10 +109,10 @@ angular.module('polymerChatApp')
     }
 
     function getUserAvatar(user) {
-      if(user.provider === "github"){
+      if(user.provider === 'github'){
         return user.thirdPartyUserData.avatar_url;
       }
-      if(user.provider === "google"){
+      if(user.provider === 'google'){
         return user.thirdPartyUserData.picture;
       }
     }
