@@ -50,40 +50,6 @@ body {
 #login {
   margin-top: 40px; }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px; }
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */ }
-  .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px; }
-
-/* Custom page footer */
-.container-narrow > hr {
-  margin: 30px 0; }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5; }
-  .jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px; }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0; }
-  .marketing p + h4 {
-    margin-top: 28px; }
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -130,7 +96,8 @@ core-toolbar {
   opacity: 1; }
 
 paper-fab {
-  float: right; }
+  float: right;
+  margin-top: -12px; }
 
 #toolbartop {
   position: absolute;
@@ -138,7 +105,9 @@ paper-fab {
   top: 0; }
 
 paper-input::shadow {
-  color: #FFF; }
+  color: #FFF;
+  width: 500px;
+  margin-left: 20px; }
 
 .container-chat {
   background: #FFF;
@@ -167,6 +136,8 @@ paper-input::shadow {
           width: 60px;
           border-radius: 100px; }
       .container-chat .messages .row .content {
-        float: left; }
+        float: left;
+        width: 84%;
+        margin-right: 0; }
         .container-chat .messages .row .content p {
           padding-top: 11px; }

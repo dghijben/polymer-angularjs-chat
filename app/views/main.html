@@ -16,14 +16,14 @@
 
     <div class="clearfix"></div>
     <a id="bottom"></a>
-    <paper-shadow z="1"></paper-shadow>
+    <paper-shadow z="2"></paper-shadow>
 
   </div>
   <div class="footer">
     <core-toolbar id="toolbarfooter">
       <div style="width: 840px; margin: 0 auto">
         <span flex>
-          <paper-input label="Say something..."></paper-input>
+          <paper-input label="Say something..." ng-keyup="sendMessage($event)" ></paper-input>
           <paper-fab icon="arrow-forward" ng-click="submitMessage()"></paper-fab>      
         </span>        
       </div>
