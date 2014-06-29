@@ -1,6 +1,15 @@
 html, body {
   height: 100%; }
 
+  core-header-panel {
+  background: #EEEEEE;
+  /* height: 100% fails here on some browsers */
+  height: 100vh;
+  width: 100vw; }
+
+core-toolbar {
+  background-color: #03A9F4; }
+
 core-header-panel {
   min-height: 100%;
   height: auto !important;
@@ -107,14 +116,7 @@ paper-button[raisedButton].colored {
   background: #4285f4;
   color: #fff; }
 
-core-header-panel {
-  background: #EEEEEE;
-  /* height: 100% fails here on some browsers */
-  height: 100vh;
-  width: 100vw; }
 
-core-toolbar {
-  background-color: #3E50B4; }
 
 .list-messages.ng-enter,
 .list-messages.ng-leave {
