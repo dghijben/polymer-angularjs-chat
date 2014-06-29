@@ -11,11 +11,11 @@
     "angular-animate": "1.2.16",
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
-    "platform": "Platform/platform",
     "core-elements": "Polymer/core-elements#~0.3.3",
     "paper-elements": "Polymer/paper-elements#~0.3.3",
     "jquery": "~2.1.1",
-    "angularfire": "~0.7.1"
+    "angularfire": "~0.7.1",
+    "polymer": "Polymer/polymer#~0.3.3"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
