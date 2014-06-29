@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="message-list" attributes="src name content" noscript>
+  <template>
+    <link rel="stylesheet" href="message-list.css">
+    <li id="row">
+      <div id="avatar">
+        <img src="{{src}}" alt="">
+      </div>
+      <div id="content">
+        <strong>{{name}}</strong>
+        <p>{{content}}</p>
+      </div>
+    </li>
+  </template>
+</polymer-element>
+
+
+<script>
+  Polymer('message-list', {
+    
+    src: '',
+
+    name: '',
+
+    content: '',
+
+    attached: function() {
+      if(this.name.trim().length == 0) {
+        this.name = 'Anonymous';
+      }
+    }
+  });
+</script>

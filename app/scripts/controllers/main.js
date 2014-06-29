@@ -8,7 +8,12 @@
  * Controller of the polymerChatApp
  */
 angular.module('polymerChatApp')
-  .controller('MainCtrl', function ($scope, $firebase, $location, $anchorScroll, $route) {
+  .controller('MainCtrl', function ($scope, $firebase, $location, $anchorScroll, $route, $sce) {
+    
+    $scope.trustSrc = function(src) {
+      return $sce.trustAsResourceUrl(src);
+    }    
+
     $scope.showLogin = false;
     $scope.showChat = false;
 
@@ -125,5 +130,6 @@ angular.module('polymerChatApp')
         return user.thirdPartyUserData.picture;
       }
     };
+
 
   });
