@@ -1,0 +1,54 @@
+/*
+Syntax error: File to import not found or unreadable: compass.
+              Load path: /Users/hugodias/Projects/gulp-angularjs-starter-project/app/assets/stylesheets
+        on line 1 of main.scss
+
+1: @import 'compass';
+2: @import 'compass/reset';
+3: 
+4: html, body {
+5:     height: 100%;
+6: }
+
+Backtrace:
+main.scss:1
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/import_node.rb:45:in `import'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/exec.rb:443:in `watch_or_update'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/exec.rb:326:in `process_result'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/exec.rb:41:in `parse'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/lib/sass/exec.rb:21:in `parse!'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.19/bin/scss:13:in `<top (required)>'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247/bin/scss:23:in `load'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247/bin/scss:23:in `<main>'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `eval'
+/Users/hugodias/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: compass.\A               Load path: /Users/hugodias/Projects/gulp-angularjs-starter-project/app/assets/stylesheets\A         on line 1 of main.scss\A \A 1: @import 'compass';\A 2: @import 'compass/reset';\A 3: \A 4: html, body {\A 5:     height: 100%;\A 6: }"; }

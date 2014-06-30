@@ -1,0 +1,186 @@
+@import 'compass';
+@import 'compass/reset';
+@import 'components.css';
+
+// bower:scss
+// endbower
+
+html, body {
+  height: 100%;
+}
+
+
+core-header-panel{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 64px; /* .push must be the same height as .footer */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+body {
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  background: #EEEEEE;
+}
+.clearfix{
+  clear: both;
+}
+.card{
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 25px;
+}
+
+#chat{
+  min-height: 500px;
+  #chat-input{
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.featured-list__item{
+  min-height: 0;
+  padding: 12px 0;
+}
+.user-info{
+  text-align: center;
+  .user-img{
+    border-radius: 100px;
+    width: 60px;
+  }
+  .user-name{
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+  }
+}
+
+#login{
+  margin-top: 40px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+paper-button[raisedButton].colored {
+  background: #4285f4;
+  color: #fff;
+}
+
+core-header-panel {
+  background: #EEEEEE;
+  /* height: 100% fails here on some browsers */
+  height: 100vh;
+  width: 100vw;
+}
+
+core-toolbar {
+  background-color: #3E50B4;
+}
+#toolbarfooter{
+
+}
+
+.list-messages.ng-enter,
+.list-messages.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.list-messages.ng-enter,
+.list-messages.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.list-messages.ng-leave,
+.list-messages.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+
+paper-fab{
+  float: right;
+  margin-top: -12px;
+}
+
+#toolbartop{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+paper-input::shadow{
+  color: #FFF;
+  width: 500px;
+  margin-left: 20px;
+}
+
+
+.container-chat{
+  background: #FFF;
+  margin-top: 120px;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-bottom: 63px;
+  padding-bottom: 30px;
+  .messages{
+    float: left;
+    margin: 0;
+    padding: 0;
+    .row{
+      list-style: none;
+      float: left;
+      width: 100%;
+      padding-left: 0;
+      padding: 5px 0;
+      &::before{
+        content: "";
+      }
+      .avatar{
+        float: left;
+        padding: 10px 20px 10px 20px;
+        width: 90px;
+        img{
+          width: 60px;
+          border-radius: 100px;
+        }
+      }
+      .content{
+        width: 85%;
+        margin-right: 0;
+        float: left;
+        width: 84%;
+        margin-right: 0;
+        p{
+          padding-top: 11px;
+        }
+      }
+    }
+  }
+}
+
+

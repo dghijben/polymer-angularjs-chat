@@ -1,9 +1,9 @@
 {
-  "firebase": "polymer-chat",
-  "public": "app",
-  "ignore": [
-    "firebase.json",
-    ".*",
-    "**/node_modules/**"
-  ]
+    "firebase": "polymer-chat",
+    "public": "build",
+    "ignore": [
+        "firebase.json",
+        ".*",
+        "**/node_modules/**"
+    ]
 }
