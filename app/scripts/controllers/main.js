@@ -12,7 +12,7 @@ angular.module('polymerChatApp')
     
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
-    }    
+    };
 
     $scope.showLogin = false;
     $scope.showChat = false;
@@ -72,7 +72,7 @@ angular.module('polymerChatApp')
      $scope.sendMessage = function (event){
       if (event.keyCode === 13) {
         $scope.submitMessage();
-      };
+      }
     };
 
     $scope.submitMessage = function() {
@@ -106,21 +106,21 @@ angular.module('polymerChatApp')
       var toast = angular.element('#toast')[0];
       $scope.statusMessage = msg;
       toast.show();      
-    };
+    }
 
     function getInputValue() {
       var input = angular.element('paper-input')[0];
       return input.value;
-    };
+    }
 
     function resetInputValue() {
       var input = angular.element('paper-input')[0];
       input.value = '';
-    };
+    }
 
     function isValid( str ) {
       return str.trim().length > 0 && str.trim().length <= limitLen;
-    };
+    }
 
     function getUserAvatar(user) {
       if(user.provider === 'github'){
@@ -129,7 +129,7 @@ angular.module('polymerChatApp')
       if(user.provider === 'google'){
         return user.thirdPartyUserData.picture;
       }
-    };
+    }
 
 
   });

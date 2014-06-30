@@ -136,6 +136,8 @@ paper-input::shadow {
           width: 60px;
           border-radius: 100px; }
       .container-chat .messages .row .content {
+        width: 85%;
+        margin-right: 0;
         float: left;
         width: 84%;
         margin-right: 0; }
